@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <title>College Enquiry</title>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      background-image:url("/static/blue.jpeg");
+      font-size: 15px;
+      }
+      form {
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      .icon {
+      font-size: 110px;
+      display: flex;
+      justify-content: center;
+      color: #4286f4;
+      }
+      .send-button {
+      background-color: #4286f4;
+      color: white;
+      padding: 12px 0;
+      margin: 10px 0;
+      border: 1px solid blue;
+      cursor: grab;
+      width: 50%;
+      }
+	.end-button {
+      background-color: #FF0000;
+      color: white;
+      padding: 4px 0;
+      margin: 2px 0;
+      border: 2px solid white
+      cursor: grab;
+      width: 50%;
+      }
+      h1 {
+      text-align:center;
+      font-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: center;
+      margin: 24px 50px 12px;
+      }
+	.text-box {
+  	font-size: 16px;
+ 	 display: flex;
+ 	 width: 100%;
+	}
+      .container1 {
+	font-size: 20px;
+      padding: 16px 0;
+      text-align:center;
+	font-weight:bold;
+	
+      }
+	.container2 {
+	font-size: 17px;
+	padding: 16px 0;
+      text-align:left;
+	font-weight:bold;
+	
+      }
+      a:link, a:visited
+	{
+	background-color:#f44336;
+	color:white;
+	padding:14px 25px;
+	text-align:center;
+	display:inline-block;
+	}
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }}
+    </style>
+  </head>
+  <body>
+    <form action="{{url_for('chatbotsystem')}}" method="POST">
+      <h1>College Enquiry</h1>
+      <div class="icon">
+	 <img src="/static/chat.jpg"></img>
+      </div>
+      <div class="formcontainer">
+      <div class="container1">
+       <label for="ufname"><strong>WELCOME</strong></label></br></br>
+	</div>
+	<div class="container2">
+	  <label for="ufname"><strong>Copy and paste your questions from below list</strong></label></br>
+	  <label for="ufname"><strong>1.Does the college have a football team?</strong></label></br>
+	  <label for="ufname"><strong>2.Does the college have a Computer Science Major?</strong></label></br>
+	  <label for="ufname"><strong>3.What is the in-state tuition?</strong></label></br>
+	  <label for="ufname"><strong>4.Does the college have on-campus housing?</strong></label></br>
+      </div>
+	<div class="text-box">
+       <input type="text" name="question" id="message" autocomplete="off" placeholder="Copy and paste your Questions here">
+	  <input class="send-button" type="submit" value="Submit">
+      </div>
+	  <a href="{{url_for('endchat')}}" align='center'">End Chat</a>
+	</div> 
+	
+    </form>
+	
+  </body>
+</html>
